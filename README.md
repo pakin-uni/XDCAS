@@ -33,10 +33,13 @@ pip install -e .  # Install the package in editable mode for development
 <details open>
 <summary>Training</summary>
 
-<div align=center>
-<img src="./ultralytics/assets/VisDrone_mAP0.5.png" alt="VisDrone_mAP0.5" width = "549" />
-</div>
-
+ต้องมีการแก้ไข dataset.ymal ตามด้านล่าง
+```
+path: C:/Users/Windows/datasets   # dataset root dir
+train: train/image # train images (relative to 'path')
+val: val/image  # val images (relative to 'path')
+#test:  test/image  # test images (optional)
+```
 The commands below reproduce DCAS_EMAdp training results.
 
 ```bash
@@ -45,12 +48,16 @@ yolo task=detect mode=train model=yolov8+DCASEMAdp.yaml data=dataset.yaml epochs
 </details>
 
 <details open>
+
+การ Evaluation/Inference ต้องมีการแก้ไข dataset.ymal เปลี่ยน test: >> val:ตามด้านล่าง
+```
+path: C:/Users/Windows/datasets   # dataset root dir
+train: train/image # train images (relative to 'path')
+#val: val/image  # val images (relative to 'path')
+val:  test/image  # test images (optional)
+```
 <summary>Evaluation</summary>
 The commands below reproduce DCAS_EMAdp evaluation results.
-
-<div align=center>
-<img src="./ultralytics/assets/VisDrone_mAP0.5.png" alt="VisDrone_mAP0.5" width = "549" />
-</div>
 
 ```bash
 yolo task=detect mode=val model=weights/best.pt data=VisDrone.yaml batch=16 device=0
