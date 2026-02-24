@@ -28,7 +28,7 @@ pip install -e .  # Install the package in editable mode for development
 ```
 
 ## 2. files ที่ต้องมีการแก้ไข path ไปยัง folder  
-1. DAM.py แก้ให้เป็น path ของ dataset 
+###2.1. DAM.py แก้ให้เป็น path ของ dataset 
 ตำแหน่ง:
   
 ```bash
@@ -37,13 +37,13 @@ ultralytics/nn/DAM.py
 
 กำหนด path ของ image_folder, label_folder และ, yolo_root 
 
-``` bash
+```bash
 line 13: def __init__(self, yolo_root, image_folder="C:/Users/Windows/datasets/train/images", label_folder="C:/Users/Windows/datasets/train/labels"):
 
 line 54: dataset = YOLODataSet(yolo_root='C:/Users/Windows/datasets/')
  ```
 
-2. dataset.yaml แก้ให้เป็น path ของ dataset
+###2.2. dataset.yaml แก้ให้เป็น path ของ dataset
 ตำแหน่ง:
 
 ```bash
@@ -60,7 +60,6 @@ line 5: #test:  test/image  # test images (optional)
 ```
 
 
-<details open>
 ##3. สำหรับ Training
 
 การ train ต้องมีการแก้ไข dataset.ymal ตามด้านล่าง
@@ -72,15 +71,16 @@ val: val/image  # val images (relative to 'path')
 #test:  test/image  # test images (optional)
 ```
 
-The commands below reproduce DCAS_EMAdp training results.
+คำสั่งด้านล่างใช้สำหรับฝึกโมเดล DCAS_EMAdp
 
 ```bash
 yolo task=detect mode=train model=yolov8+DCAS_EMAdp data=dataset.yaml epochs=300 batch=16 device=0
 ```
 
 
-<summary>สำหรับ Evaluation</summary>
-การ Evaluation/Inference ต้องมีการแก้ไข dataset.yaml เปลี่ยน test: >> val: ตามด้านล่าง
+##4. สำหรับ Evaluation
+
+ในการทำ Evaluation/Inference ให้แก้ไข dataset.yaml โดยเปลี่ยนการอ้างอิงจาก test เป็น val ตามตัวอย่างด้านล่าง
   
 ```bash
 path: C:/Users/Windows/datasets   # dataset root dir
@@ -95,9 +95,9 @@ yolo task=detect mode=val model=weights/best.pt data=dataset.yaml batch=16 devic
 ```
 
 
-<summary>Inference</summary>
+##5. Inference
 
-The commands below reproduce DCAS_EMAdp inference results.
+คำสั่งด้านล่างใช้สำหรับรันการทำนายผล (inference) ของโมเดล DCAS_EMAdp
 
 ```bash
 yolo task=detect mode=predict model=weights/best.pt device=0 source=path/to/image.jpg  # image
