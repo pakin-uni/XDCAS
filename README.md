@@ -13,15 +13,42 @@ source venv/bin/activate #linux
 pip install torch==2.5.1 torchvision torchaudio \
   --index-url https://download.pytorch.org/whl/cu121
 git clone https://github.com/crafly/DCAS.git  # Clone the DCAS repository
-cd DCAS  # Navigate to the cloned directory
+cd DCAS_EMAdp  # Navigate to the cloned directory
 pip install -e .  # Install the package in editable mode for development
+```
+</details>
+
+<details open>
+<summary> files ที่ต้องมีการแก้ไข path ไปยัง folder</summary>  
+  1. DAM.py แก้ให้เป็น path ของ dataset 
+ตำแหน่ง:
+```
+ultralytics/nn/DAM.py
+```
+กำหนด path ของ image_folder, label_folder และ, yolo_root 
+``` 
+line 13: def __init__(self, yolo_root, image_folder="C:/Users/Windows/datasets/train/images", label_folder="C:/Users/Windows/datasets/train/labels"):
+
+line 54: dataset = YOLODataSet(yolo_root='C:/Users/Windows/datasets/')
+ ```
+  2. dataset.yaml แก้ให้เป็น path ของ dataset
+ตำแหน่ง:
+```
+ultralytics/datasets/dataset.yaml
+```
+กำหนด path root และโฟลเดอร์ย่อยของ train, val, test
+```
+line 2:path: C:/Users/Windows/datasets   # dataset root dir
+line 3:train: train/image # train images (relative to 'path')
+line 4:val: val/image  # val images (relative to 'path')
+line 5: #test:  test/image  # test images (optional)
 ```
 </details>
 
 <details open>
 <summary>สำหรับ Training</summary>
 
-ต้องมีการแก้ไข dataset.ymal ตามด้านล่าง
+การ train ต้องมีการแก้ไข dataset.ymal ตามด้านล่าง
 ```
 path: C:/Users/Windows/datasets   # dataset root dir
 train: train/image # train images (relative to 'path')
@@ -31,13 +58,13 @@ val: val/image  # val images (relative to 'path')
 The commands below reproduce DCAS_EMAdp training results.
 
 ```bash
-yolo task=detect mode=train model=yolov8+DCASEMAdp.yaml data=dataset.yaml epochs=300 batch=16 device=0
+yolo task=detect mode=train model=yolov8+DCAS_EMAdp data=dataset.yaml epochs=300 batch=16 device=0
 ```
 </details>
 
 <details open>
 <summary>สำหรับ Evaluation</summary>
-การ Evaluation/Inference ต้องมีการแก้ไข dataset.ymal เปลี่ยน test: >> val:ตามด้านล่าง
+การ Evaluation/Inference ต้องมีการแก้ไข dataset.yaml เปลี่ยน test: >> val: ตามด้านล่าง
 ```
 path: C:/Users/Windows/datasets   # dataset root dir
 train: train/image # train images (relative to 'path')
