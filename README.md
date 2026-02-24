@@ -6,12 +6,22 @@
 
 Clone repository and install [requirements.txt](./requirements.txt) in a [**Python==3.10**](https://www.python.org/) environment, 
 including [**PyTorch==2.5.1**](https://pytorch.org/get-started/previous-versions/) and [**CUDA==12.1**](https://pytorch.org/get-started/previous-versions/).
+
+สร้าง virtual environment
 ```bash
 python -m venv name
+```
+เปิดใช้งาน environment
+```bash
 venv\Scripts\activate #window
 source venv/bin/activate #linux
-pip install torch==2.5.1 torchvision torchaudio \
-  --index-url https://download.pytorch.org/whl/cu121
+```
+ติดตั้ง PyTorch พร้อม CUDA 12.1
+```bash
+pip install torch==2.5.1 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+``
+ดาวน์โหลด repository และติดตั้งแพ็กเกจ
+```bash
 git clone https://github.com/crafly/DCAS.git  # Clone the DCAS repository
 cd DCAS_EMAdp  # Navigate to the cloned directory
 pip install -e .  # Install the package in editable mode for development
