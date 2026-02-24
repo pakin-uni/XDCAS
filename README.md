@@ -1,8 +1,8 @@
-## <div align="center">Documentation</div>
+# <div align="center">Documentation</div>
 
-### Quick Start
+
 <details open>
-# 1. ขั้นตอนการติดตั้ง (Installation)
+## 1. ขั้นตอนการติดตั้ง (Installation)
 
 Clone repository and install [requirements.txt](./requirements.txt) in a [**Python==3.10**](https://www.python.org/) environment, 
 including [**PyTorch==2.5.1**](https://pytorch.org/get-started/previous-versions/) and [**CUDA==12.1**](https://pytorch.org/get-started/previous-versions/).
@@ -29,7 +29,7 @@ pip install -e .  # Install the package in editable mode for development
 </details>
 
 <details open>
-<summary> files ที่ต้องมีการแก้ไข path ไปยัง folder</summary>  
+## 2. files ที่ต้องมีการแก้ไข path ไปยัง folder  
 1. DAM.py แก้ให้เป็น path ของ dataset 
 ตำแหน่ง:
   
@@ -45,7 +45,7 @@ line 13: def __init__(self, yolo_root, image_folder="C:/Users/Windows/datasets/t
 line 54: dataset = YOLODataSet(yolo_root='C:/Users/Windows/datasets/')
  ```
 
-  2. dataset.yaml แก้ให้เป็น path ของ dataset
+2. dataset.yaml แก้ให้เป็น path ของ dataset
 ตำแหน่ง:
 
 ```bash
@@ -64,7 +64,7 @@ line 5: #test:  test/image  # test images (optional)
 </details>
 
 <details open>
-<summary>สำหรับ Training</summary>
+##3. สำหรับ Training
 
 การ train ต้องมีการแก้ไข dataset.ymal ตามด้านล่าง
 
