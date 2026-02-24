@@ -1,7 +1,7 @@
 # <div align="center">Documentation</div>
 
 
-<details open>
+
 ## 1. ขั้นตอนการติดตั้ง (Installation)
 
 Clone repository and install [requirements.txt](./requirements.txt) in a [**Python==3.10**](https://www.python.org/) environment, 
@@ -26,9 +26,7 @@ git clone https://github.com/crafly/DCAS.git  # Clone the DCAS repository
 cd DCAS_EMAdp  # Navigate to the cloned directory
 pip install -e .  # Install the package in editable mode for development
 ```
-</details>
 
-<details open>
 ## 2. files ที่ต้องมีการแก้ไข path ไปยัง folder  
 1. DAM.py แก้ให้เป็น path ของ dataset 
 ตำแหน่ง:
@@ -61,7 +59,6 @@ line 4:val: val/image  # val images (relative to 'path')
 line 5: #test:  test/image  # test images (optional)
 ```
 
-</details>
 
 <details open>
 ##3. สำหรับ Training
@@ -81,9 +78,7 @@ The commands below reproduce DCAS_EMAdp training results.
 yolo task=detect mode=train model=yolov8+DCAS_EMAdp data=dataset.yaml epochs=300 batch=16 device=0
 ```
 
-</details>
 
-<details open>
 <summary>สำหรับ Evaluation</summary>
 การ Evaluation/Inference ต้องมีการแก้ไข dataset.yaml เปลี่ยน test: >> val: ตามด้านล่าง
   
@@ -98,9 +93,8 @@ The commands below reproduce DCAS_EMAdp evaluation results.
 ```bash
 yolo task=detect mode=val model=weights/best.pt data=dataset.yaml batch=16 device=0
 ```
-</details>
 
-<details open>
+
 <summary>Inference</summary>
 
 The commands below reproduce DCAS_EMAdp inference results.
@@ -110,4 +104,4 @@ yolo task=detect mode=predict model=weights/best.pt device=0 source=path/to/imag
                                                                     path/to/video.mp4  # video
                                                                     path/to/dir  # directory
 ```
-</details>
+
