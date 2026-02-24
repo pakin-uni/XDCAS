@@ -91,7 +91,7 @@ train: train/image # train images (relative to 'path')
 #val: val/image  # val images (relative to 'path')
 val:  test/image  # test images (optional)
 ```
-The commands below reproduce DCAS_EMAdp evaluation results.
+คำสั่งด้านล่างใช้สำหรับประเมินผลโมเดล DCAS_EMAdp
   
 ```bash
 yolo task=detect mode=val model=weights/best.pt data=dataset.yaml batch=16 device=0
