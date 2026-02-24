@@ -2,7 +2,7 @@
 
 ### Quick Start
 <details open>
-<summary>ขั้นตอนที่ 1: การติดตั้ง (Installation)</summary>
+#<summary>ขั้นตอนการติดตั้ง (Installation)</summary>
 
 Clone repository and install [requirements.txt](./requirements.txt) in a [**Python==3.10**](https://www.python.org/) environment, 
 including [**PyTorch==2.5.1**](https://pytorch.org/get-started/previous-versions/) and [**CUDA==12.1**](https://pytorch.org/get-started/previous-versions/).
