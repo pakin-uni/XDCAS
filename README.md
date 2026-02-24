@@ -30,8 +30,8 @@ cd DCAS_EMAdp  # Navigate to the cloned directory
 pip install -e .  # Install the package in editable mode for development
 ```
 
-#2. files ที่ต้องมีการแก้ไข path ไปยัง folder  
-##2.1. DAM.py แก้ให้เป็น path ของ dataset 
+# 2. files ที่ต้องมีการแก้ไข path ไปยัง folder  
+## 2.1. DAM.py แก้ให้เป็น path ของ dataset 
 ตำแหน่ง:
   
 ```bash
@@ -46,7 +46,7 @@ line 13: def __init__(self, yolo_root, image_folder="C:/Users/Windows/datasets/t
 line 54: dataset = YOLODataSet(yolo_root='C:/Users/Windows/datasets/')
  ```
 
-##2.2. dataset.yaml แก้ให้เป็น path ของ dataset
+## 2.2. dataset.yaml แก้ให้เป็น path ของ dataset
 ตำแหน่ง:
 
 ```bash
@@ -63,7 +63,7 @@ line 5: #test:  test/image  # test images (optional)
 ```
 
 
-#3. สำหรับ Training
+# 3. สำหรับ Training
 
 การ train ต้องมีการแก้ไข dataset.ymal ตามด้านล่าง
 
@@ -81,7 +81,7 @@ yolo task=detect mode=train model=yolov8+DCAS_EMAdp data=dataset.yaml epochs=300
 ```
 
 
-#4. สำหรับ Evaluation
+# 4. สำหรับ Evaluation
 
 ในการทำ Evaluation/Inference ให้แก้ไข dataset.yaml โดยเปลี่ยนการอ้างอิงจาก test เป็น val ตามตัวอย่างด้านล่าง
   
@@ -98,7 +98,7 @@ yolo task=detect mode=val model=weights/best.pt data=dataset.yaml batch=16 devic
 ```
 
 
-#5. Inference
+# 5. Inference
 
 คำสั่งด้านล่างใช้สำหรับรันการทำนายผล (inference) ของโมเดล DCAS_EMAdp
 
