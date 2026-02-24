@@ -9,7 +9,8 @@ including [**PyTorch==2.5.1**](https://pytorch.org/get-started/previous-versions
 
 สร้าง virtual environment
 ```bash
-python -m venv name
+py -3.10 -m venv venv #window
+python3.10 -m venv venv #linux
 ```
 
 เปิดใช้งาน environment
