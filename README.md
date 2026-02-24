@@ -11,15 +11,18 @@ including [**PyTorch==2.5.1**](https://pytorch.org/get-started/previous-versions
 ```bash
 python -m venv name
 ```
+
 เปิดใช้งาน environment
 ```bash
 venv\Scripts\activate #window
 source venv/bin/activate #linux
 ```
+
 ติดตั้ง PyTorch พร้อม CUDA 12.1
 ```bash
 pip install torch==2.5.1 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-``
+```
+
 ดาวน์โหลด repository และติดตั้งแพ็กเกจ
 ```bash
 git clone https://github.com/crafly/DCAS.git  # Clone the DCAS repository
