@@ -2,7 +2,7 @@
 
 ### Quick Start
 <details open>
-<summary>#ขั้นตอนการติดตั้ง (Installation)</summary>
+# 1. ขั้นตอนการติดตั้ง (Installation)
 
 Clone repository and install [requirements.txt](./requirements.txt) in a [**Python==3.10**](https://www.python.org/) environment, 
 including [**PyTorch==2.5.1**](https://pytorch.org/get-started/previous-versions/) and [**CUDA==12.1**](https://pytorch.org/get-started/previous-versions/).
@@ -30,7 +30,7 @@ pip install -e .  # Install the package in editable mode for development
 
 <details open>
 <summary> files ที่ต้องมีการแก้ไข path ไปยัง folder</summary>  
-  1. DAM.py แก้ให้เป็น path ของ dataset 
+1. DAM.py แก้ให้เป็น path ของ dataset 
 ตำแหน่ง:
   
 ```bash
