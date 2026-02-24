@@ -2,7 +2,7 @@
 
 ### Quick Start
 <details open>
-<summary>Install</summary>
+<summary>ขั้นตอนที่ 1: การติดตั้ง (Installation)</summary>
 
 Clone repository and install [requirements.txt](./requirements.txt) in a [**Python==3.10**](https://www.python.org/) environment, 
 including [**PyTorch==2.5.1**](https://pytorch.org/get-started/previous-versions/) and [**CUDA==12.1**](https://pytorch.org/get-started/previous-versions/).
@@ -19,7 +19,7 @@ pip install -e .  # Install the package in editable mode for development
 </details>
 
 <details open>
-<summary>Training</summary>
+<summary>สำหรับ Training</summary>
 
 ต้องมีการแก้ไข dataset.ymal ตามด้านล่าง
 ```
@@ -36,7 +36,7 @@ yolo task=detect mode=train model=yolov8+DCASEMAdp.yaml data=dataset.yaml epochs
 </details>
 
 <details open>
-<summary>Evaluation</summary>
+<summary>สำหรับ Evaluation</summary>
 การ Evaluation/Inference ต้องมีการแก้ไข dataset.ymal เปลี่ยน test: >> val:ตามด้านล่าง
 ```
 path: C:/Users/Windows/datasets   # dataset root dir
